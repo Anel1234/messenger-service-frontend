@@ -34,12 +34,19 @@ function userMessageViewModel() {
             // we should make sure that the massage is not chunked or
             // otherwise damaged.
             //try {
-                console.log(message);
+                //console.log(message);
                 var json = JSON.parse(message.data);
                 json.forEach(function(obj) {                   
-                    obj.data.datetime = moment(obj.data.datetime).format("DD/MM/YY hh:mm")  
+                    obj.data.datetime = moment(obj.data.datetime).format("DD/MM/YY HH:mm")  
                     self.messageHistory.push(obj.data);
-                    console.log(obj.data);
+
+                    var elem = document.getElementById('messageArea');
+                    elem.scrollTop = elem.scrollHeight;
+
+                    //var tableDiv = $('#messageArea')
+                    //tableDiv.scrollTop = tableDiv.scrollHeight;
+                    //console.log(obj.data);
+
                 })
                 //json.data.datetime = moment(json.datatime).format("DD/MM/YY hh:mm")
                 // self.messageHistory.push(json);

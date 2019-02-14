@@ -27,7 +27,7 @@ function userMessageViewModel() {
     userNameSubmitted = function () {
 
         //connection = new WebSocket('ws://127.0.0.1:1337');
-        connection = new WebSocket('ws://127.0.0.1:1337');
+        connection = new WebSocket('ws://messenger-service-backend.herokuapp.com');
         connection.onmessage = function (message) {
             // try to parse JSON message. Because we know that the server
             // always returns JSON this should work without any problem but
